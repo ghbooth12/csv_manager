@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Import and export a CSV file in a very easy and simple way}
   spec.homepage      = "https://github.com/ghbooth12/csv_manager"
   spec.license       = "MIT"
-  
+
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "pry"
 end

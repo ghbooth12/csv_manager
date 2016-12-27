@@ -10,3 +10,4 @@
 
 csv_manager-*.gem
 .DS_Store
+.idea/

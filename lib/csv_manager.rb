@@ -15,19 +15,13 @@ module CSVManager
     def parse(file, headers=true)
       return if file.nil?
       file = file.path if file.respond_to?(:path)
+      raw_rows = CSV.read(file, headers: headers, converters: :numeric).to_a
 
-      begin
-        raw_rows = CSV.read(file)
-      rescue
-        puts "\n=====\nError occurs. Please check your CSV file.\nERROR MESSAGE: #{$!.message}\n=====\n"
-        return
-      end
-
-      @cols = raw_rows.shift if headers
+      @cols = raw_rows.shift
       @rows = raw_rows
 
       @entire = []
-      CSV.foreach(file, headers: headers) do |row|
+      CSV.foreach(file, headers: headers, converters: :numeric) do |row|
         @entire << row.to_hash
       end
     end

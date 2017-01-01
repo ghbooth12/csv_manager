@@ -6,9 +6,10 @@ describe "CSVManager::Import#create" do
     @csv_path = Dir.pwd + "/spec/csvs/"
   end
 
-  it "" do
+  it "populates database" do
     @importer.parse(@csv_path + "inventories.csv")
-    @importer.create()
-
+    expect(Product.count).to eq 0
+    @importer.create(Product)
+    expect(Product.count).to eq 5
   end
 end

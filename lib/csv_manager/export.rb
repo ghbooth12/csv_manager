@@ -9,12 +9,14 @@ module CSVManager
       model = Object.const_get(model_str)
       cols = model.column_names
 
-      CSV.generate do |csv|
+      csv_file = CSV.generate do |csv|
         csv << cols
         model.all.each do |x|
           csv << x.attributes.values_at(*cols)
         end
       end
+
+      return csv_file
     end
 
   end

@@ -1,16 +1,8 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+require "active_record"
 require "csv_manager"
+require "support/models"
 
-class Product < ActiveRecord::Base
-  def self.column_names
-    ["name","category","quantity"]
-  end
+ActiveRecord::Base.establish_connection adapter: "sqlite3", database: ":memory:"
 
-  def self.all
-
-  end
-
-  def attributes
-
-  end
-end
+$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+load File.dirname(__FILE__) + '/support/schema.rb'

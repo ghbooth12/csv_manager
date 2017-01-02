@@ -1,7 +1,7 @@
 module CSVManager
   class Export
-    def download(controller, objs)
-      controller.send_data to_csv(objs)
+    def download(controller, objs, filename=nil)
+      controller.send_data to_csv(objs), filename: filename
     end
 
     def to_csv(objs)

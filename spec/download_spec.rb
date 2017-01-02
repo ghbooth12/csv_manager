@@ -11,6 +11,8 @@ describe "CSVManager::Export#download" do
 
   it "downloads a csv file with given controller and given objects" do
     objs = Product.all
+    # text = @exporter.to_csv(objs)
     @exporter.download(@products_controller, objs)
+    # @products_controller.expects(:send_data).with(text).returns(:success)
   end
 end

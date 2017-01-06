@@ -32,6 +32,7 @@ module CSVManager
 
     # Before calling this method, `parse` has to be called first.
     def create(model, hash_arr=@entire)
+      return if model.nil?
       for hash in hash_arr
         model.create(hash)
       end

@@ -13,7 +13,7 @@ describe "CSVManager::Import#get_contents" do
     quantities = [100, 110, 20, 30, 50]
 
     expect(@importer.get_contents("name")).to eq names
-    expect(@importer.get_contents("type")).to eq types
+    expect(@importer.get_contents("category")).to eq types
     expect(@importer.get_contents("quantity")).to eq quantities
   end
 end

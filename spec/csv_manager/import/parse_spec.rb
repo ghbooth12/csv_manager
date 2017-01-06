@@ -9,7 +9,7 @@ describe CSVManager do
 
     it "parses given CSV file into cols, rows, entire" do
       @importer.parse(@csv_path + "inventories.csv")
-      cols = ["name","type","quantity"]
+      cols = ["name","category","quantity"]
 
       rows = [["pen", "stationery", 100],
               ["bowl", "kitchen", 110],
@@ -17,11 +17,11 @@ describe CSVManager do
               ["soap", "bath", 30],
               ["peppermint", "tea", 50]]
 
-      entire = [{"name"=>"pen", "type"=>"stationery", "quantity"=>100},
-                {"name"=>"bowl", "type"=>"kitchen", "quantity"=>110},
-                {"name"=>"banana", "type"=>"fruit", "quantity"=>20},
-                {"name"=>"soap", "type"=>"bath", "quantity"=>30},
-                {"name"=>"peppermint", "type"=>"tea", "quantity"=>50}]
+      entire = [{"name"=>"pen", "category"=>"stationery", "quantity"=>100},
+                {"name"=>"bowl", "category"=>"kitchen", "quantity"=>110},
+                {"name"=>"banana", "category"=>"fruit", "quantity"=>20},
+                {"name"=>"soap", "category"=>"bath", "quantity"=>30},
+                {"name"=>"peppermint", "category"=>"tea", "quantity"=>50}]
 
       expect(@importer.cols).to eq cols
       expect(@importer.rows).to eq rows

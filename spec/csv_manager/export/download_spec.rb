@@ -39,7 +39,7 @@ describe "CSVManager::Export#download" do
   end
 
   describe "when controller and objs are not nil" do
-    it "downloads a csv file with given controller and given objects" do
+    it "returns a CSV formatted string with given controller and given objects" do
       objs = Product.all
       text = @exporter.to_csv(objs)
 

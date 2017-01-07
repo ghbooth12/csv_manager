@@ -1,6 +1,6 @@
 name,type,quantity,size
-"pen","stationery",100,10
-"bowl","kitchen",110,20
-"banana","fruit",20,15
-"soap","bath",30,5
-"peppermint","tea",50,9
+pen,stationery,100,10
+bowl,kitchen,110,20
+banana,fruit,20,15
+soap,bath,30,5
+peppermint,tea,50,9

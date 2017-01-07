@@ -1,6 +1,6 @@
 # CSVManager
 
-This gem help import/export a CSV file in a very easy and simple way.
+This gem helps import/export a CSV file in a very easy and simple way.
 
 ```ruby
 # Import a CSV file and parse the file
@@ -26,7 +26,7 @@ $ gem install csv_manager
 
 ## Usage
 
-### Import
+### How to Import
 First instantiate `CSVManager::Import` class.
 ```ruby
 @import = CSVManager::Import.new
@@ -62,7 +62,7 @@ Populate database with data from `@import`
 
 -----
 
-### Export
+### How to Export
 First instantiate `CSVManager::Export` class.
 ```ruby
 @export = CSVManager::Export.new
@@ -81,11 +81,9 @@ In the view, make sure to send `format: "csv"` to the path.
 * [Example 5) Download database in a CSV file](doc/export_download.md)
 
 
-## Development
+## Demo App
+To see the `CSVManager` in action you can take a look at this app - [Inventory](https://inventory-ghbooth12.herokuapp.com).
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 

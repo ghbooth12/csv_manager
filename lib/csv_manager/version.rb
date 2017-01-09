@@ -1,3 +1,3 @@
 module CSVManager
-  VERSION = "1.0.0-rc.1"
+  VERSION = "1.0.1-rc.1"
 end

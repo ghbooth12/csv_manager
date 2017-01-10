@@ -80,6 +80,7 @@ In the view, make sure to send `format: "csv"` to the path.
 
 * [Example 5) Download database in a CSV file](doc/export_download.md)
 
+-----
 
 ## Demo App
 To see the `CSVManager` in action you can take a look at this app - [Inventory](https://inventory-ghbooth12.herokuapp.com).

@@ -5,6 +5,7 @@ ActiveRecord::Schema.define do
     t.string :name
     t.string :category
     t.integer :quantity
-    t.timestamps
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 end

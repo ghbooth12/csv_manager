@@ -44,7 +44,7 @@ describe "CSVManager::Export#download" do
       text = @exporter.to_csv(objs)
 
       result = @exporter.download(@products_controller, objs)
-      expect(result).to eq text
+      expect(result).to eq [text]
     end
   end
 end

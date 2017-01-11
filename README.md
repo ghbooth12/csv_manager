@@ -1,5 +1,8 @@
 # CSVManager
 
+[![Build Status](https://travis-ci.org/ghbooth12/csv_manager.svg?branch=master)](https://travis-ci.org/ghbooth12/csv_manager)
+[![Gem Version](https://badge.fury.io/rb/csv_manager.svg)](https://badge.fury.io/rb/csv_manager)
+
 This gem helps import/export a CSV file in a very easy and simple way.
 
 ```ruby

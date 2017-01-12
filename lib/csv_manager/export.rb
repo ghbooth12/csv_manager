@@ -1,18 +1,25 @@
-# require 'logging'
-
 module CSVManager
   class Export
-    # def initialize
-    #   @logger = Logging.logger['csv_manager_export_log.txt']
-    #   @logger.level = :debug
-    # end
+    def initialize
+      @logger = Logging.logger(STDOUT)
+      @logger.level = :debug
+    end
 
+    # Calls `send_data` with text from `to_csv(obj)` and option hash.
+    # Then returns a CSV formatted string in an array.
+    # [params]
+    # - controller: controller that takes care of "download CSV" request. eg) products_controller
+    # - objs: model instances. eg) Product.all, Product.where(category: "office")
+    # - filename: a filename string. eg) "inventory_2016.csv"
     def download(controller, objs, filename=nil)
-      # @logger.debug "DOWNLOAD METHOD CALLED"
       return if controller.nil? || objs.nil?
+      @logger.info "#{LINER}CSVManager::Export#download {controller: #{controller}, objs: #{objs}, filename: #{filename}}#{LINER}"
       controller.send_data to_csv(objs), filename: filename
     end
 
+    # Generates a CSV formatted string with headers and given objects(objs).
+    # [params]
+    # - objs: model instances. eg) [product1, product2], Product.all
     def to_csv(objs)
       return unless validate(objs)
 
@@ -34,7 +41,9 @@ module CSVManager
       return csv_file
     end
 
-    # This method checks to see if an instance of ActiveRecord::Relation or an array of instance of ActiveRecord::Base is passed in.
+    # Checks to see if an instance of ActiveRecord::Relation or an array of instance of ActiveRecord::Base is passed in.
+    # [params]
+    # - objs: model instances
     def validate(objs)
       valid = false
 

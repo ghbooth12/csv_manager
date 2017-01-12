@@ -39,11 +39,22 @@ describe "CSVManager::Export#download" do
   end
 
   describe "when controller and objs are not nil" do
-    it "returns a CSV formatted string with given controller and given objects" do
+    it "returns a CSV formatted string in an array" do
       objs = Product.all
       text = @exporter.to_csv(objs)
 
       result = @exporter.download(@products_controller, objs)
+      expect(result).to eq [text]
+    end
+  end
+
+  describe "when filename is given" do
+    it "returns a CSV formatted string in an array" do
+      objs = Product.all
+      text = @exporter.to_csv(objs)
+      filename = "my_CSV_file.csv"
+
+      result = @exporter.download(@products_controller, objs, filename)
       expect(result).to eq [text]
     end
   end

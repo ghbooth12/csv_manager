@@ -21,6 +21,19 @@ describe "CSVManager::Import#parse" do
     end
   end
 
+  describe "when file doesn't exist" do
+    it "sets @error to error message without throwing an exception" do
+      file = @csv_path + "not_exist.csv"
+
+      result = @importer.parse(file)
+
+      expect(@importer.cols).to eq []
+      expect(@importer.rows).to eq []
+      expect(@importer.entire).to eq []
+      expect(@importer.error).not_to eq nil
+    end
+  end
+
   context "when header has a different value" do
     describe "when headers is a symbol" do
       it "does not break and completes parsing" do
